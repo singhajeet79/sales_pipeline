@@ -1,4 +1,4 @@
-# ByteVault: Sales Medallion Data Pipeline 🚀
+# Sales Medallion Data Pipeline 🚀
 
 [![Tech Stack](https://img.shields.io/badge/Stack-Airflow%20|%20Spark%20|%20Delta%20Lake-blue)](#-tech-stack)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/singhajeet79)
@@ -37,13 +37,15 @@ AWS_DEFAULT_REGION=ap-south-1
 
 ---
 
-### 3. Launching the Platform
-```
-docker compose -f master-platform.yml up -d
+## 🧩 Engineering Challenges & Solutions
 
-* Airflow UI: localhost:8080 (admin/admin)
-
-* Jupyter Lab: localhost:8888
+| Challenge | Solution |
+| :--- | :--- |
+| **Path Mismatch** | Resolved Docker volume mapping issues by switching from relative paths to **Absolute Paths** within the container environment. |
+| **Dependency Conflicts** | Fixed `ModuleNotFoundError` by isolating PySpark scripts from the Airflow DAG parser and injecting `boto3` via Docker exec. |
+| **Metadata Desync** | Addressed "Removed" task states by **reserializing** the DAG and clearing the Postgres metadata cache after code refactoring. |
+| **Security Risk** | Eliminated hardcoded AWS credentials by implementing **Environment Variables** (`os.getenv`) to satisfy GitHub's Secret Scanning protections. |
+| **Orchestration Logic** | Implemented `FileSensor` with `reschedule` mode to optimize resource usage while waiting for landing zone data. |
 
 ---
 
