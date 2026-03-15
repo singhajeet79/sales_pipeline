@@ -1,0 +1,16 @@
+.env
+pgdata/
+__pycache__/
+*.pyc
+# Ignore Spark/Java binaries
+*.jar
+
+# Ignore data files
+*.csv
+*.parquet
+*.json
+data/
+
+# Ignore environment and DB files
+.env
+pgdata/
