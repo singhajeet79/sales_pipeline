@@ -5,8 +5,9 @@ from datetime import datetime
 import os
 
 # AWS Configurations
-aws_access_key = os.getenv("AWS_ACCESS_KEY_ID")
-aws_secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY") 
+S3_ENDPOINT = "s3.ap-south-1.amazonaws.com"
 
 default_args = {
     "owner": "data-eng",
@@ -18,8 +19,8 @@ SPARK_SUBMIT_BASE = (
     "--conf spark.driver.extraClassPath=/spark/jars/* "
     "--conf spark.executor.extraClassPath=/spark/jars/* "
     f"--conf spark.hadoop.fs.s3a.endpoint={S3_ENDPOINT} "
-    f"--conf spark.hadoop.fs.s3a.access.key={AWS_KEY} "
-    f"--conf spark.hadoop.fs.s3a.secret.key={AWS_SECRET} "
+    f"--conf spark.hadoop.fs.s3a.access.key={AWS_ID} "
+    f"--conf spark.hadoop.fs.s3a.secret.key={AWS_KEY} "
     "--conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem "
     "--conf spark.hadoop.fs.s3a.path.style.access=false "
 )
