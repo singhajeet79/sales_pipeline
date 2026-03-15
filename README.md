@@ -1,5 +1,8 @@
 # ByteVault: Sales Medallion Data Pipeline 🚀
 
+[![Tech Stack](https://img.shields.io/badge/Stack-Airflow%20|%20Spark%20|%20Delta%20Lake-blue)](#-tech-stack)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/singhajeet79)
+
 An end-to-end Data Engineering platform leveraging the **Medallion Architecture** (Bronze → Silver → Gold) to process retail sales data. This project uses a containerized infrastructure to orchestrate data movement from local sources to AWS S3 and PostgreSQL.
 
 
@@ -38,20 +41,9 @@ AWS_DEFAULT_REGION=ap-south-1
 ```
 docker compose -f master-platform.yml up -d
 
-*Airflow UI: localhost:8080 (admin/admin)
+* Airflow UI: localhost:8080 (admin/admin)
 
 * Jupyter Lab: localhost:8888
-
----
-
-### 📂 Project Structure
-```
-shared-infra/
-├── master-platform.yml        # Docker Compose infrastructure
-├── sales_pipeline/
-│   ├── dags/                  # Airflow DAG definitions
-│   ├── scripts/               # PySpark & Ingestion scripts
-│   └── data/                  # Landing zone for source CSVs
 
 ---
 
@@ -62,8 +54,6 @@ shared-infra/
 
 [ ] Add a dbt layer for Gold transformations.
 
-
 ---
-
 #### Check out [My GitHub Page](https://singhajeet79.github.io/) for more AI/MLOps/Data Engineering projects.
 **Happy Engineering!** 🚀
