@@ -28,13 +28,6 @@ An end-to-end Data Engineering platform leveraging the **Medallion Architecture*
 * Docker & Docker Compose installed.
 * AWS IAM User with S3 Full Access.
 
-### 2. Environment Configuration
-Create a `.env` file in the root directory:
-```env
-AWS_ACCESS_KEY_ID=your_access_key
-AWS_SECRET_ACCESS_KEY=your_secret_key
-AWS_DEFAULT_REGION=ap-south-1
-
 ---
 
 ## 🧩 Engineering Challenges & Solutions
